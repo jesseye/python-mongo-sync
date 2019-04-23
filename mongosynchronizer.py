@@ -8,6 +8,10 @@ from kafka_facade import KafkaFacade
 import logging
 logger = logging.getLogger()
 
+# 利用pymongo来操作mongodb,
+# 阅读资料：
+#   中文教程：http://www.runoob.com/mongodb/mongodb-java.html
+#   API：http://api.mongodb.com/python/current/
 class MongoSynchronizer(object):
     def __init__(self, config):
         logger.info('initializing mongo sychronizer...')

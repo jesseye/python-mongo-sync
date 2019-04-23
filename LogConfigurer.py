@@ -1,5 +1,8 @@
 import logging, sys, re
 
+
+# 利用PYTHON logging 模块来打印日志 
+# logging 介绍: https://www.cnblogs.com/yyds/p/6901864.html
 class LogConfigurer(object):
     def __init__(self, config):
         self.config = config
@@ -11,9 +14,6 @@ class LogConfigurer(object):
         level = self.get_log_level(level_txt)
         logger.setLevel(level)
  
-
-        # format = self.config.get('logging', 'logging.format')  
-        # if not format:
         format = '%(asctime)s - %(filename)s - %(funcName)s - %(lineno)s - %(levelname)s - %(message)s'
 
         logger_name = self.config.get('logging', 'logging.logger')
@@ -51,6 +51,7 @@ class LogConfigurer(object):
         else:
             return logging.INFO
 
+# 根据日志中的文件名字段,过滤干扰信息
 class FileFilter(object):
     def __init__(self, include_exp):
         self.include_exp = r'%s'%(include_exp)

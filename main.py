@@ -11,12 +11,9 @@ if __name__ == '__main__':
         config_file = sys.argv[1]
     else:
         config_file='config.ini'
-    
-    fmt = '%(asctime)s - %(filename)s - %(funcName)s - %(lineno)s - %(levelname)s - %(message)s'
-    logging.basicConfig(level = logging.INFO, format = fmt)
 
-
-
+    # 利用parse configuer读取配置信息
+    # 阅读资料: https://blog.csdn.net/henulwj/article/details/49174355
     if config_file == 'config.ini':
         proDir = path.dirname(path.realpath(__file__))
         configPath = path.join(proDir, "config.ini")

@@ -6,7 +6,21 @@ from pykafka.common import OffsetType
 import logging
 logger = logging.getLogger()
 
+#### kafka的一些重要概念
+# broker: 消息中间件的处理节点,一个broker是一个节点,多个broker可以组成集群
+# Topic: 一类消息
+# Partition: Topic物理上的分组,一个Topic可以分为多个Partition, 每个Partition都是有序的队列
+# Segement: 每个Partition有多个segement文件组成
+# offset: 每个partition都有一系列连续的,不可变的消息组成,这些消息被追加到partition中. 每个消息都有一个连续的序号叫做offset,作为消息在partition中的唯一标识.
+# message: kafka文件中的最小存储单位, 也就是a commit log  
 
+# 利用pykafka操作kafka
+# api: https://pykafka.readthedocs.io/en/latest/
+# kafka 安装配置：https://blog.csdn.net/hg_harvey/article/details/79174104
+# kafka 教程：https://www.w3cschool.cn/apache_kafka/apache_kafka_fundamentals.html
+# kafka 分区器：https://blog.csdn.net/abinge317/article/details/84542073
+# kafka 位移(offset)与提交(commit)：https://blog.csdn.net/roshy/article/details/88579034
+# kafka 消费者与消费者组：http://www.cnblogs.com/huxi2b/p/6223228.html
 class KafkaFacade(object):
     def __init__(self, host="192.168.237.129:9092"):
         self.host = host
