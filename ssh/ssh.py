@@ -15,3 +15,7 @@ ssh.close()
 # pip3 download -d .\packages -r req.text
 
 # pip install --no-index --find-index=.\packages -r req.txt
+
+# pip install --download d:\python27\packs pandas（-r requirements.txt）
+
+# pip install --no-index --find-links=d:\python27\packs\ pandas （-r requirements.txt）
